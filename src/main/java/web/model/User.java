@@ -1,52 +1,43 @@
 package web.model;
 
 import jakarta.persistence.*;
-
+@Table(name = "users")
 @Entity
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "number")
-    private  Long number;
+    @Column(name = "lastname")
+    private String lastname;
+    @Column(name = "age")
+    private  Byte  age;
+ 
 
-    public User(Long id, String name, Long number) {
-        this.id = id;
-        this.name = name;
-        this.number = number;
+    public Long getId() {
+        return id;
     }
-
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Long getId() {
-        return id;
-    }
-    public String getName() {
-        return name;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public User(String name, Long number) {
-        this.name = name;
-        this.number = number;
+    public Byte getAge() {
+        return age;
     }
 
-    public Long getNumber() {
-        return number;
+    public void setAge(Byte age) {
+        this.age = age;
     }
 
-    public void setNumber(Long number) {
-        this.number = number;
-    }
 
     public User() {
     }
